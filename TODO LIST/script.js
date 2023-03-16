@@ -16,7 +16,8 @@ const input = document.getElementById('task'),
     clear__all = document.querySelector('.clear__all');
 
 class Task {
-    // display tasks
+
+    // display the tasks given
     static display() {
         const tasks_container = document.getElementById('tasks');
         let _tasks = '';
@@ -46,7 +47,7 @@ class Task {
         this.display();
     }
 
-    // completed
+    
     static todoCompleted(task) {
         tasks.forEach(item => {
             if (`${item.id}` === task) {
@@ -60,7 +61,7 @@ class Task {
         this.display();
     }
 
-    // update/edit task
+    // update/edit the task
     static update(task) {
         const taskItems = document.querySelectorAll('.task-item');
         const taskInput = document.getElementById('task-input');
@@ -128,7 +129,7 @@ class Task {
     }
 }
 
-// Create Btn
+// Create Button
 createBtn.addEventListener('click', (e) => {
     const input_value = input.value;
     if (input_value !== '') {
@@ -139,7 +140,7 @@ createBtn.addEventListener('click', (e) => {
     }
 });
 
-// Search Btn
+// Search Button
 search_btn.addEventListener('click', e => {
     let task = input;
     let search_value = input.value;
@@ -180,7 +181,7 @@ function showError(error_place, error_message) {
     }
 }
 
-// Clear All Btn
+// Clear All button
 function clearAll() {
     tasks = [];
     Task.display();
